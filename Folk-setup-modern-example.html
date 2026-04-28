@@ -8,10 +8,10 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --green: #22c55e;
-    --green-dark: #16a34a;
-    --green-light: #dcfce7;
-    --green-muted: #bbf7d0;
+    --yellow: #F5C518;
+    --yellow-dark: #C9A000;
+    --yellow-light: #FEFCE8;
+    --yellow-muted: #FEF08A;
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
@@ -57,12 +57,7 @@
     align-items: center;
     gap: 10px;
   }
-  .site-header .logo-dot {
-    width: 10px; height: 10px;
-    background: var(--green);
-    border-radius: 50%;
-    display: inline-block;
-  }
+  .folk-logo { display: flex; align-items: center; }
 
   /* ── Steps ────────────────────────────────────────────── */
   .steps-bar {
@@ -89,10 +84,10 @@
   }
   .step-tab:hover { color: var(--gray-800); }
   .step-tab.active {
-    color: var(--green-dark);
-    border-bottom-color: var(--green);
+    color: var(--yellow-dark);
+    border-bottom-color: var(--yellow);
   }
-  .step-tab.done { color: var(--green-dark); }
+  .step-tab.done { color: var(--yellow-dark); }
   .step-num {
     width: 22px; height: 22px;
     border-radius: 50%;
@@ -107,12 +102,12 @@
     transition: background .15s, color .15s;
   }
   .step-tab.active .step-num {
-    background: var(--green);
-    color: #fff;
+    background: var(--yellow);
+    color: var(--gray-900);
   }
   .step-tab.done .step-num {
-    background: var(--green-light);
-    color: var(--green-dark);
+    background: var(--yellow-light);
+    color: var(--yellow-dark);
   }
 
   /* ── Page layout ──────────────────────────────────────── */
@@ -133,8 +128,8 @@
     transition: border-color .15s;
   }
   .card.enabled {
-    border-color: var(--green);
-    box-shadow: 0 0 0 3px var(--green-light), var(--shadow);
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 3px var(--yellow-light), var(--shadow);
   }
 
   .card-header {
@@ -155,7 +150,7 @@
     background: var(--gray-100);
     color: var(--gray-500);
   }
-  .status-badge.on { background: var(--green-light); color: var(--green-dark); }
+  .status-badge.on { background: var(--yellow-light); color: var(--yellow-dark); }
 
   .card-body {
     border-top: 1px solid var(--gray-100);
@@ -181,7 +176,7 @@
     cursor: pointer;
     transition: background .2s;
   }
-  .toggle input:checked ~ .toggle-track { background: var(--green); }
+  .toggle input:checked ~ .toggle-track { background: var(--yellow); }
   .toggle-thumb {
     position: absolute;
     top: 3px; left: 3px;
@@ -226,14 +221,14 @@
     user-select: none;
   }
   .pill:hover {
-    border-color: var(--green);
-    background: var(--green-light);
-    color: var(--green-dark);
+    border-color: var(--yellow);
+    background: var(--yellow-light);
+    color: var(--yellow-dark);
   }
   .pill.selected {
-    border-color: var(--green);
-    background: var(--green);
-    color: #fff;
+    border-color: var(--yellow);
+    background: var(--yellow);
+    color: var(--gray-900);
   }
   .pill input { display: none; }
 
@@ -254,9 +249,9 @@
   }
   .ghost-btn:hover { border-color: var(--gray-400); color: var(--gray-800); }
   .ghost-btn.active {
-    border-color: var(--green);
-    background: var(--green-light);
-    color: var(--green-dark);
+    border-color: var(--yellow);
+    background: var(--yellow-light);
+    color: var(--yellow-dark);
   }
 
   /* ── Camera preview ───────────────────────────────────── */
@@ -325,8 +320,8 @@
     user-select: none;
   }
   .cal-item:last-child { margin-bottom: 0; }
-  .cal-item:hover { border-color: var(--green); background: var(--green-light); color: var(--green-dark); }
-  .cal-item.selected { border-color: var(--green); background: var(--green-light); color: var(--green-dark); }
+  .cal-item:hover { border-color: var(--yellow); background: var(--yellow-light); color: var(--yellow-dark); }
+  .cal-item.selected { border-color: var(--yellow); background: var(--yellow-light); color: var(--yellow-dark); }
   .cal-item input { display: none; }
   .cal-dot {
     width: 14px; height: 14px;
@@ -339,7 +334,7 @@
     content: '';
     position: absolute;
     inset: 2px;
-    background: var(--green-dark);
+    background: var(--yellow-dark);
     border-radius: 50%;
   }
 
@@ -348,17 +343,17 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--green);
-    color: #fff;
+    background: var(--yellow);
+    color: var(--gray-900);
     border: none;
     border-radius: var(--radius-sm);
     padding: 10px 20px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: background .15s, transform .1s;
   }
-  .primary-btn:hover { background: var(--green-dark); }
+  .primary-btn:hover { background: var(--yellow-dark); color: #fff; }
   .primary-btn:active { transform: scale(0.98); }
   .primary-btn:disabled {
     background: var(--gray-200);
@@ -423,7 +418,17 @@
 <!-- ── Header ─────────────────────────────────────────────── -->
 <header class="site-header">
   <div class="logo">
-    <span class="logo-dot"></span>
+    <span class="folk-logo">
+      <svg width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="18" fill="#F5C518"/>
+        <rect x="8" y="8" width="20" height="20" stroke="#1f2937" stroke-width="1.5" fill="none"/>
+        <rect x="5.5" y="5.5" width="4" height="4" fill="#1f2937"/>
+        <rect x="26.5" y="5.5" width="4" height="4" fill="#1f2937"/>
+        <rect x="5.5" y="26.5" width="4" height="4" fill="#1f2937"/>
+        <rect x="26.5" y="26.5" width="4" height="4" fill="#1f2937"/>
+        <text x="18" y="23.5" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="13" fill="#1f2937">F</text>
+      </svg>
+    </span>
     Folk
   </div>
 </header>
